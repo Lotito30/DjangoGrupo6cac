@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include "base/head.html" %}
+
+<body>
+    {% include "base/header.html" %}
+   
+    {% block content %}
+    {% endblock %}
+    
+    {% include "base/footer.html" %}
+    
+    <script>
+      const exp = document.querySelectorAll('.experiencia')
+
+      function animacionExperiencia() {
+        exp.forEach(experiencia =>{
+        const elementoTop = experiencia.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+
+          if (elementoTop < windowHeight){
+            experiencia.classList.add('aparecer')
+          }else{
+            experiencia.classList.remove('aparecer')
+          }
+        })
+      }
+      window.addEventListener('scroll',animacionExperiencia)
+      window.addEventListener('load',animacionExperiencia)
+    </script>
+</body>
+</html>
