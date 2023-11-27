@@ -1,5 +1,5 @@
-urban-guide
-urban-guide es un proyecto de Django que permite crear y gestionar una tienda online de productos de decoración. Con urban-guide, puedes crear productos con nombre, descripción, precio, stock e imagen, y mostrarlos en una página web. También puedes editar y eliminar los productos existentes, y recibir los datos de contacto de los clientes interesados en comprarlos.
+DecoArte
+DecoArte es un proyecto de Django que permite crear y gestionar una tienda online de productos de decoración. Con DecoArte, puedes crear productos con nombre, descripción, precio, stock e imagen, y mostrarlos en una página web. También puedes editar y eliminar los productos existentes, y recibir los datos de contacto de los clientes interesados en comprarlos.
 
 Características
 Crea productos con un formulario fácil de usar
