@@ -1,0 +1,41 @@
+/* Para tabletas */
+@media (min-width:768px) and (max-width:1023px) { 
+    html{
+        font-size: 90%;
+    } 
+    #experiencias .contenedorGrid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    #experiencias .activar{
+        display: block;
+    }
+}
+
+/* Para móviles */
+@media (min-width:350px) and (max-width:767px){  
+    html{
+        font-size: 70%;
+    }    
+    .contenedorGrid:not(.contacto ul){
+        grid-template-columns: 70%;
+        justify-content: center;
+    }
+    header nav ul li{
+        font-size: 2rem;
+    }
+    #home span{
+        font-size: 6rem;
+    }
+    #home p{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #experiencias .activar{
+        display: block;
+    }
+    .navegacion{
+        text-align: center;
+    }
+}
+  

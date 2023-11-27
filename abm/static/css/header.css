@@ -1,0 +1,92 @@
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    font-size: 1.2rem;
+    /* position: fixed; Agregar que cuando empiece a scrollear haga un background con box-shadow
+    top: 0; left: 0; */
+    box-shadow: 0px 0px 10px #000000;
+    backdrop-filter: blur(10px); 
+    z-index: 2;
+}
+
+header img{
+    width: 9rem;
+}
+nav ul{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+header ul li a{
+    padding: .5rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    color: #ff9900;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0px 0px 5px #000;
+}
+ul li a.activar{
+    background-color: #ff6a00;
+    border-color: #fff;
+    color: #F5F5DC;
+}
+ul li a:hover:not(footer a){
+    background-color: #ff6a00;
+    border-color: #fff;
+    color: #F5F5DC;
+}
+
+.btn{
+    background-color: #8B4513;
+    color: #fff;
+    padding: .5rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--);
+}
+
+header i{
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@media (min-width:320px) and (max-width:767px){ 
+    header{
+        justify-content: space-between;
+    } 
+    
+    header ul{
+        display: none;
+        position: absolute;
+        top: 60%;right: 5%;
+        background-color: #8B4513;
+        padding: 1rem;
+        border-radius: 1rem;
+        line-height: 1.5;
+    }
+    header ul li a{
+        font-size: 1.4rem;
+    }
+    header i{
+        position: absolute;
+        right: 15%;
+        opacity: 1;
+        font-size: 2rem;
+    }
+    
+    header i:hover + nav ul{
+        display: block;
+    }
+
+    header ul:hover{
+        display: block;
+    }
+}

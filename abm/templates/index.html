@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section id="home">
+    <div class="contenedor">
+      <div class="bienvenida">
+        <h1>
+          <span class="span1">Decor</span><span class="span2">Arte</span>
+        </h1>
+        <p>Transformando Espacios en Obras de Arte</p>
+        <a href="/productos" class="btn escalar">Ver Productos</a>
+      </div>
+      <img
+        src="{% static 'img/decoracion/imagen3.png'%}"
+        alt="living room con muebles y ventanas muy grandes"
+        width="100%"
+      />
+      <img src="{% static 'img/iconoWhatsapp.png' %}" alt="WhatsApp" class="escalar">
+    </div> 
+  </section>
+  <section id="sponsor">
+    <div class="contenedor">
+    <div class="logoSponsor">
+      <img src="{% static 'img/sponsor/sponsor1.png'%}" alt="sponsor IMA"/>
+      <img src="{% static 'img/sponsor/sponsor3.png'%}" alt="sponsor DB"/>
+      <img src="{% static 'img/sponsor/sponsor4.png'%}" alt="sponsor Muebles lagos"/>
+      <img src="{% static 'img/sponsor/sponsor2.png'%}" alt="sponsor tempo"/>
+    </div>
+    <hr>
+    <div class="rango">
+      <div class="rating">
+        <h1>4.6</h1>
+        <div class="estrellas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div><br>
+        <p>759 Ratings</p>
+        <p>Google Reviews</p>
+      </div>
+      <div class="cliente">
+        <h1>Nuestros Clientes</h1>
+        <span>Marcos Perez</span>
+        <p>
+          No puedo dejar de expresar mi gratitud y satisfacción con la
+          experiencia que tuve al comprar en <strong>DecorArte</strong>.
+          Como amante de la decoración y el mobiliario de calidad, he
+          explorado muchas opciones, pero esta tienda es simplemente
+          excepcional.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="servicios">
+    <div class="contenedor">
+      <div class="cabecera">
+        <h1>Nuestros productos</h1>
+        <a href="productos" class="btn escalar">Ver Más</a>
+      </div>
+      <div class="contenedorGrid">
+        <article class="servicio escalar">
+          <img
+            src="{%static 'img/fondoServicios.jpg'%}"
+            alt="living room"
+            width="200px"
+          />
+          <h3>Diseño a Tu Medida</h3>
+          <p>
+            Creemos en la individualidad y la personalización. Con nuestra
+            gama de muebles personalizables, puedes diseñar tu propio
+            mobiliario. Desde la elección de telas y colores hasta la
+            configuración de estanterías y mesas a medida, estamos aquí para
+            dar vida a tus ideas y adaptar cada detalle a tus preferencias.
+          </p>
+          <a href="/productos">Ver Más</a>
+        </article>
+        <article class="servicio escalar">
+          <img
+            src="{% static 'img/fondoPrincipal4.jpg'%}"
+            alt="living room"
+            width="200px"
+          />
+          <h3>Elegancia Responsable</h3>
+          <p>
+            Nos comprometemos con la sostenibilidad y la responsabilidad
+            ambiental. Nuestra línea de muebles sostenibles está fabricada con
+            materiales ecoamigables y procesos de producción conscientes del
+            medio ambiente. Descubre una amplia gama de muebles que combinan
+            diseño elegante con la tranquilidad de saber que estás
+            contribuyendo al bienestar del planeta.
+          </p>
+          <a href="/productos">Ver Más</a>
+        </article>
+        <article class="servicio escalar">
+          <img
+            src="{% static 'img/fondoServicios1.jpg'%}"
+            alt="living room"
+            width="200px"
+          />
+          <h3>Transforma Tu Rincón en un Oasis</h3>
+          <p>
+            No importa cuán pequeño sea tu espacio, nuestra selección de
+            decoración está diseñada para maximizar su belleza y utilidad.
+            Desde espejos que amplían visualmente una habitación hasta
+            soluciones de almacenamiento ingeniosas, te ayudaremos a convertir
+            cualquier rincón en un oasis de estilo y comodidad.
+          </p>
+          <a href="/productos">Ver Más</a>
+        </article>
+      </div>
+      <div class="particion">
+        <hr>
+        <p>Beneficios y Caracteristicas</p>
+        <hr>
+      </div>
+      <div class="contenedorGrid">
+        <div class="beneficio">
+          <h3>Características</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>Ofrecemos productos únicos.</li>
+            <li><i class="fas fa-check"></i>Productos de alta calidad.</li>
+            <li><i class="fas fa-check"></i>Entrega rápida y confiable.</li>
+            <li>
+              <i class="fas fa-check"></i>Servicio al cliente excepcional.
+            </li>
+            <li><i class="fas fa-check"></i>Opciones de personalización.</li>
+          </ul>
+        </div>
+        <div class="beneficio">
+          <h3>Beneficios</h3>
+          <ul>
+            <li>
+              <i class="fas fa-check"></i>Transforma tu hogar con productos
+              exclusivos.
+            </li>
+            <li>
+              <i class="fas fa-check"></i>Disfruta de muebles y decoración que
+              perduran.
+            </li>
+            <li>
+              <i class="fas fa-check"></i>Recibe tus productos en poco tiempo.
+            </li>
+            <li>
+              <i class="fas fa-check"></i>Obtén ayuda experta para tu
+              selección.
+            </li>
+            <li>
+              <i class="fas fa-check"></i>Personaliza tu espacio de acuerdo a
+              tus deseos.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="{% static 'img/decoracion/imagen4.png'%}" alt="" width="150px" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="experiencias">
+    <div class="contenedor">
+      <h1>Testimonios de Nuestros Clientes</h1>
+      <div class="contenedorGrid">
+        <article class="experiencia escalar">
+          <div class="circuloFotoPerfil">
+            <img
+              src="{%static 'img/cliente/experiencia3.png'%}"
+              alt="foto persona dando experiencia"
+              class="fotoPerfil"
+            />
+          </div>
+          <h3>Alicia Rodriguez, Buenos Aires</h3>
+          <div class="estrellas">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            "Muebles de calidad, entrega puntual, Grupo6 CAC cumplió mis
+            expectativas con creces."
+          </p>
+        </article>
+        <article class="experiencia escalar">
+          <div class="circuloFotoPerfil">
+            <img
+              src="{%static 'img/cliente/experiencia1.png'%}"
+              alt="foto persona dando experiencia"
+              class="fotoPerfil"
+            />
+          </div>
+          <h3>Gustavo Gonzalez, Belgrano</h3>
+          <div class="estrellas">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            "Muebles impecables, servicio amable, mi casa se siente
+            encantadora gracias a Grupo6 CAC"
+          </p>
+        </article>
+        <article class="experiencia escalar">
+          <div class="circuloFotoPerfil">
+            <img
+              src="{%static 'img/cliente/experiencia2.png'%}"
+              alt="foto persona dando experiencia"
+              class="fotoPerfil"
+            />
+          </div>
+          <h3>Andrés Morales, Villa Devoto</h3>
+          <div class="estrellas">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            "Productos excepcionales, servicio estelar, mi experiencia de
+            compra en Grupo6 CAC fue excelente"
+          </p>
+        </article>
+        <article class="experiencia activar escalar">
+          <div class="circuloFotoPerfil">
+            <img
+              src="{% static 'img/cliente/experiencia4.png'%}"
+              alt="foto persona dando experiencia"
+              class="fotoPerfil"
+            />
+          </div>
+          <h3>Alicia Rodriguez, Buenos Aires</h3>
+          <div class="estrellas">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            "Muebles de calidad, entrega puntual, Grupo6 CAC cumplió mis
+            expectativas con creces."
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="mapa">
+      <p>Nos encontramos en <i>Avenida Belgrano 2300, C1096AAS</i> de la Ciudad Autónoma de Buenos Aires. Estamos ubicados en el barrio de Balvanera. Si necesita ayuda para llegar a nuestra ubicación, no dude en ponerse en contacto con nosotros. ¡Estamos aquí para ayudarlo!
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.595569185773!2d-58.40164792460677!3d-34.614386972950484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccae66616998f%3A0x53fcee1053fc0aed!2sAv.%20Belgrano%202300%2C%20C1094AAR%20CABA!5e0!3m2!1ses-419!2sar!4v1698662344065!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="#header"><i class="fas fa-arrow-up fa-2x plantillaCaja escalar"></i></a>
+    </section{% static 'img/logo1'%}>
+    
+{% endblock %}
+

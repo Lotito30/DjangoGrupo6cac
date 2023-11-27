@@ -1,0 +1,87 @@
+footer{
+    padding: 1rem;
+    background-color: #aeadad;
+    color: #232323;
+}
+footer h3{
+    margin-bottom: 1rem;
+    color: beige;
+}
+
+footer .contenedorGrid{
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    margin-top: 3rem;
+}
+.newsletter{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.newsletter h1{
+    color: #000;
+}
+.newsletter input{
+    display: block;
+    margin: 1rem auto;
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #FFF;
+}
+.newsletter .btn{
+    border-radius: .5rem;
+    width: 7rem;
+    background-color: #ff6a00;
+    border: 1px solid transparent;
+}
+.newsletter .btn:hover{
+    background-color: #df6b18;
+    border-color: #fff;
+}
+
+.redes-sociales li{
+    display: flex;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.redes-sociales a{
+    background-color: antiquewhite;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 8rem;
+    text-align: center;
+}
+.redes-sociales i{
+    color: #000;
+    font-size: 1.5rem;
+} 
+.contacto{
+    text-align: center;
+}
+.contacto .contenedorGrid{
+    margin-top: 2rem;
+}
+.contacto i{
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+.navegacion{
+    text-align: right;
+}
+.navegacion a{
+    color: #000;
+    text-decoration: underline;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}

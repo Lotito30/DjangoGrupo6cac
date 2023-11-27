@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block  content%}
+
+        <section id="acerca">
+          <div class="container">
+            <h1> ¿Quiénes Somos?</h1>
+            <div class="img">
+                <img src="{% static "img/tendencia1.jpeg" %}" alt="Muebles a medida">
+            <p>
+                DecorArte... es una empresa que inició sus actividades en el año 1997, desde hace más de 25 años nos especializamos en el diseño y venta de muebles para el hogar, resaltando por nuestro compromiso inquebrantable con la calidad y la creatividad. Con una pasión arraigada en la artesanía y el diseño de interiores, nos esfuerzamos constantemente por ofrecer a nuestros clientes productos que combinan funcionalidad y estética de manera excepcional. <br>
+                <br>Cada pieza es cuidadosamente concebida por un equipo de diseñadores talentosos y fabricada con los más altos estándares de calidad, utilizando materiales sostenibles siempre que sea posible. Nos enorgullece ofrecer una amplia gama de estilos que van desde lo clásico y atemporal hasta lo moderno y vanguardista, asegurando que nuestros productos se adapten a una variedad de ambientes y estilos de vida. Nuestro compromiso con la calidad y la artesanía se refleja en cada pieza que producimos, convirtiendo los espacios de nuestros clientes en hogares acogedores y hermosos. Estamos comprometidos con la excelencia en el diseño y la satisfacción de nuestros clientes.
+               </p>
+            </div>
+          </div>
+        </section>
+        <section id="Equipo">
+          <div class="team">
+            <h2>Un Equipo Excepcional </h2> <br>
+                  <p> El equipo de diseño de interiores es un elemento central en DecorArte, compuesto por expertos en diseño y arquitectura de interiores, profesionales apasionados y comprometidoseste que trabajan en estrecha colaboración con nuestros clientes para entender sus necesidades y transformar sus hogares y oficinas en espacios funcionales y visualmente impactantes. Su enfoque en la personalización y la atención al detalle garantiza que cada proyecto sea único y excepcional, elevando la marca a la cima de la industria de muebles y decoración </p>
+          </div>
+          <div class="personal">
+                <div class="tabares">
+                  <img src="{% static "img/diseñadora.png" %}" alt="Sofia Tabares Diseñadora"> 
+                    <div class="content">
+                      <h4>Directora - Diseñadora de Interiores</h4> <br>
+                      <p>En el corazón de este equipo está su fundadora y directora creativa, Sofía Tabares. Con años de experiencia en diseño de interiores y una pasión innata por la estética. Sofía ha liderado el equipo con visión y pasión, su capacidad para identificar tendencias emergentes y su habilidad para diseñar piezas únicas han sido un factor determinante en el éxito de la empresa. Cumpliendo un rol fundamental en la creación y mejora de espacios habitables, desempeña diversas funciones y responsabilidades que van más allá de simplemente elegir muebles bonitos. </p>
+                    </div>
+                </div>
+                <div class="atn">
+                  <img src="{% static "img/atn1.jpg" %}" alt="Cristina Lopéz"> 
+                  <img src="{% static "img/atn3.jpg" %}" alt="Sebastián Cabrales">
+                    <div class="content2">
+                      <h4>Atención al Cliente</h4><br>
+                        <p> La presencia en línea y el servicio al cliente son áreas en las que el equipo de DecorArte también brilla. El equipo de marketing y ventas se encarga de dar a conocer los productos y servicios de la empresa en plataformas digitales, lo que nos ha permitido llegar a una audiencia global de amantes del diseño. Además, el equipo de atención al cliente demuestra una empatía excepcional y un profundo conocimiento de los productos, lo que crea una experiencia de compra memorable para los clientes. Este equipo se encarga de brindar un servicio de alta calidad y asegurar de que las necesidades y expectativas de los clientes se cumplan de manera efectiva.</p>
+                    </div>
+            </div>
+
+            <div id="sucursales">
+                <h2> Conoce Nuestras Sucursales</h2> 
+                <a href="sucursales.html" target="_blank"> <br>
+                   <button>Click Aquí</button></a>
+            </div>
+          </section>
+{% endblock  %}

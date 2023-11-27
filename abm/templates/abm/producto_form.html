@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="contenedor">
+    <div>
+        <h1 class='text-center'>Agregar Producto</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_table }}
+        <div class="botones">
+            <button type="submit" class="enviar-btn">Enviar</button>
+            <button type="reset" class="borrar-btn">Borrar</button>
+        </div>
+        </form>
+    </div>
+    <div class='productosEditar pt-5'>  
+        <h1 class='text-center'>Productos</h1>
+        <div class="scroll">
+            <table class="cartaProductos" border="1" >
+              <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+              </tr>
+              {% for producto in productos %}
+              <tr>
+                <td>{{producto.nombre}}</td>
+                <td style="width: 200px;">{{producto.descripcion}}</td>
+                <td style="text-align: center;">{{producto.stock}}</td>
+                <td style="text-align: center;">{{producto.precio}}</td>
+                <td>
+                  <a href="/editar/{{producto.id}}"><button type="button" class="editar-btn">Editar</button></a>
+                  <a href="/eliminar/{{producto.id}}"><button type="button" class="borrar-btn">Eliminar</button></a>
+                </td>
+          
+              </tr>
+              {% endfor %}
+            </table>
+        </div>  
+    </div>
+</div>
+   
+{% endblock  %}

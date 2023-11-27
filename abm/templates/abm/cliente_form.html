@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="contenedor">
+		<h1>Contactanos</h1>
+		
+		<form method="POST">
+			{% csrf_token %}
+			{{ form.as_table }}
+		<div class="botones mt-3">
+			<button type="submit" class="enviar-btn">Enviar</button>
+			<button type="reset" class="borrar-btn">Borrar</button>
+		</div>
+		</form>
+	</div>
+{% endblock  %}
