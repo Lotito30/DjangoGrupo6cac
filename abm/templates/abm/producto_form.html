@@ -18,8 +18,9 @@
     <div class='productosEditar pt-5'>  
         <h1 class='text-center'>Productos</h1>
         <div class="scroll">
-            <table class="cartaProductos" border="1" >
+            <table class="cartaProductos table-bordered border-primary">
               <tr>
+                <th>#</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Stock</th>
@@ -28,15 +29,15 @@
               </tr>
               {% for producto in productos %}
               <tr>
+                <td>{{loop.index0}}</td>
                 <td>{{producto.nombre}}</td>
-                <td style="width: 200px;">{{producto.descripcion}}</td>
-                <td style="text-align: center;">{{producto.stock}}</td>
-                <td style="text-align: center;">{{producto.precio}}</td>
-                <td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.stock}}</td>
+                <td>{{producto.precio}}</td>
+                <td class='botones'>
                   <a href="/editar/{{producto.id}}"><button type="button" class="editar-btn">Editar</button></a>
                   <a href="/eliminar/{{producto.id}}"><button type="button" class="borrar-btn">Eliminar</button></a>
                 </td>
-          
               </tr>
               {% endfor %}
             </table>

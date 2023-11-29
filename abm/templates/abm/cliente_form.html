@@ -1,17 +1,21 @@
 {% extends "base/base.html" %}
 {% block content %}
-	<section>
-		<div class="contenedor">
-			<h1>Contactanos</h1>
-			
-			<form method="POST">
-				{% csrf_token %}
-				{{ form.as_table }}
-			<div class="botones mt-3">
-				<button type="submit" class="enviar-btn">Enviar</button>
-				<button type="reset" class="borrar-btn">Borrar</button>
-			</div>
-			</form>
-		</div>
+	<section >
+		<article class="contenedorContacto">
+			<article class="contenedor">
+				<form method="POST">
+					{% csrf_token %}
+					{{ form.as_table }}
+				<div class="botones mt-3">
+					<button type="submit" class="enviar-btn">Enviar</button>
+					<button type="reset" class="borrar-btn">Borrar</button>
+				</div>
+				</form>
+			</article>
+			<article class="contactoTexto">
+				<h1>¿Cómo contactarnos?</h1>
+				<p>Si te interesan nuestros productos o servicios, o si quieres saber más sobre nosotros, puedes contactarnos completando el siguiente formulario. Te responderemos lo más pronto posible y te daremos toda la información que necesites. Estamos a tu disposición y te ayudaremos a crear el hogar de tus sueños.</p>
+			</article>
+		</article>
 	</section>
 {% endblock  %}

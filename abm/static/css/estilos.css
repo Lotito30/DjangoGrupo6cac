@@ -5,12 +5,12 @@
 }
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0!important;
+    padding: 0!important;
     list-style: none !important;
     text-decoration: none !important;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    box-sizing: border-box !important;
+    scroll-behavior: smooth!important;
 }
 a{
     display: inline-block;
@@ -28,9 +28,11 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    width: 85%;
+    margin: auto;
 }
 section:nth-of-type(1):not(#home){
-    margin-top: 5rem;
+    margin-top: 6rem;
 }
 section{
     padding: 3rem;
@@ -79,27 +81,26 @@ section:nth-of-type(even){
 }
 
 .cartaProductos {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-    background-color: rgb(252, 248, 248);
-    overflow-y: scroll;
+    width: 100%;
 }
 
 .scroll{
-    height: 370px;
+    height: 660px;
     background-color: rgb(252, 248, 248);
     overflow-y: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
 }
 
 td,th{
-    padding: 20px 20px;
+    padding: 12px 12px;
     text-transform: capitalize;
+    text-align: center;
 }
 th{
     font-size: 14px;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 form:not(.newsletter form){
     width: max-content;
@@ -138,14 +139,17 @@ textarea{
 .enviar-btn {
     background-color: #4CAF50;
     color: white;
+    width: 100px;
 }
 .editar-btn {
     background-color: #008CBA;
     color: white;
+    width: 100px;
 }
 .borrar-btn {
     background-color: #f44336;
     color: white;
+    width: 100px;
 }
 
 .enviar-btn:hover {
@@ -162,16 +166,55 @@ textarea{
 .botones{
     text-align: center;
 }
+
 .btn{
     padding: 12px;
-    margin: 2px;
     text-decoration: none;
     background-color: rgb(0, 0, 255);
     color: white;
     border-radius: 5px;
     font-weight: bold;
     font-size: 20px;
+    width: 100px;
 }
-.btn:hover{
-    background-color: rgb(0,0,230);
+/* cliente_form */
+.contenedorContacto{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 95%;
+    margin: auto;
+    gap: 1rem;
+    align-items: center;
+}
+.contenedorContacto article:nth-of-type(1){
+    flex: 1;
+}
+.contenedorContacto article:nth-of-type(2){
+    flex: 2;
+}
+
+.contactoTexto {
+    width: 95%;
+    margin: auto;
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
+}
+
+.contactoTexto h2 {
+    color: #8A8A8A;
+}
+
+.contactoTexto p {
+    font-size: 1rem;
+    text-align: justify;
+    width: 95%;
+}
+
+.productosEditar{
+    width: 90%;
+}
+
+#comprar img{ /* Imagen de mantenimiento*/
+    width: 100%;
+    height: 100vh;
 }

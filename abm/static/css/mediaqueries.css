@@ -1,5 +1,10 @@
-/* Para tabletas */
-/* and (max-width:1023px) */
+@media (min-width:1024px){
+    #servicios .contenedor{
+        width: 90%;
+        margin: auto;
+     }
+}
+/* Para table */
 @media (min-width:768px){ 
     html{
         font-size: 90%;
@@ -15,9 +20,10 @@
     nav ul{
         display: flex;
     }
+    
 }
 
-/* Para móviles */
+/* Para mobil */
 @media (min-width:350px) and (max-width:767px){  
     html{
         font-size: 70%;
@@ -68,8 +74,8 @@
     }
     .cabecera{
         flex-wrap: wrap;
-        justify-content: center;
         gap: .5rem;
+        justify-content: center;
     }
     .rango{
         flex-direction: column;
@@ -89,5 +95,23 @@
         height: 300px;
         margin: 0 auto;
     }
+    .contenedorContacto{
+        flex-direction: column-reverse;
+    }
+    .contactoTexto{
+        text-align: center;
+    }
+    .contactoTexto p{
+        text-align: center;
+    }
+    .redes-sociales a{
+        text-align: center;
+    }
+    
 }
   
+@media (max-width:400px){
+    .cabecera h1{
+        font-size: 1.5rem;
+    }
+}
