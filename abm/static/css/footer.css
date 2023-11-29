@@ -13,6 +13,10 @@ footer .contenedorGrid{
     justify-items: center;
     margin-top: 3rem;
 }
+footer h5{
+    margin-bottom: 1rem;
+    text-align: center;
+}
 .newsletter{
     text-align: center;
     max-width: 700px;
@@ -77,7 +81,7 @@ footer .contenedorGrid{
     margin-bottom: .5rem;
 }
 .navegacion{
-    text-align: right;
+    text-align: center;
 }
 .navegacion a{
     color: #000;

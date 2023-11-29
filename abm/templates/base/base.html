@@ -7,6 +7,7 @@
     {% include "base/header.html" %}
    
     {% block content %}
+    {% include "base/carruselProducto.html" %}
     {% endblock %}
     
     {% include "base/footer.html" %}
@@ -28,6 +29,25 @@
       }
       window.addEventListener('scroll',animacionExperiencia)
       window.addEventListener('load',animacionExperiencia)
+      
+      const menu = document.querySelector('.containerMenu')
+      const lineMenu1 = document.querySelector('.lineMenu1')
+      const lineMenu2 = document.querySelector('.lineMenu2')
+      const lineMenu3 = document.querySelector('.lineMenu3')
+      const navbar = document.querySelector('nav ul')
+      
+      menu.addEventListener('click',()=>{
+          lineMenu1.classList.toggle('active')
+          lineMenu2.classList.toggle('active')
+          lineMenu3.classList.toggle('active')
+          navbar.classList.toggle('active')
+      })
+      if(window.innerWidth > 767){
+        if (navbar.classList.contains('active')){
+          navbar.classList.remove('active')
+        }
+      }
+      
     </script>
 </body>
 </html>

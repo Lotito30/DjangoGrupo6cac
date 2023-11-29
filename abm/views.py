@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
-from django.contrib import messages
 
 from .models import Producto,Cliente
 from .forms import ProductoForm,ClienteForm
@@ -35,13 +34,14 @@ class CrearClienteView(CreateView,ProductoListView):
 
 
 def index(request):
+    productos = Producto.objects.all()
     return render(request,
                 'index.html',
                     {
                     'title': title['home'],
+                    'productos':productos
                     }
                 )
-
 def editar(request,id):
     producto = get_object_or_404(Producto, id=id)
     form = ProductoForm(request.POST or None, instance=producto)
@@ -55,12 +55,12 @@ def editar(request,id):
     return render(request,'editar.html',{'form':form, 'producto':producto, 'title':title['editar']})
 
 def eliminar(request,id):
-    producto = Producto.objects.get(id=id)
+    producto = get_object_or_404(Producto, id=id)
     producto.delete()
     return redirect('/agregarproducto')
 
 def comprar(request,id):
-    producto = Producto.objects.get(id=id)
+    producto = get_object_or_404(Producto, id=id)
     return render(request,
                   "comprar.html",
                     {

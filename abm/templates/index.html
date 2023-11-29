@@ -25,25 +25,29 @@
       <img src="{% static 'img/sponsor/sponsor1.png'%}" alt="sponsor IMA"/>
       <img src="{% static 'img/sponsor/sponsor3.png'%}" alt="sponsor DB"/>
       <img src="{% static 'img/sponsor/sponsor4.png'%}" alt="sponsor Muebles lagos"/>
-      <img src="{% static 'img/sponsor/sponsor2.png'%}" alt="sponsor tempo"/>
+      <img src="{% static 'img/sponsor/sponsor5.png'%}" alt="sponsor tempo"/>
     </div>
     <hr>
     <div class="rango">
       <div class="rating">
-        <h1>4.6</h1>
-        <div class="estrellas">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div><br>
-        <p>759 Ratings</p>
-        <p>Google Reviews</p>
+        <div>
+            <h1>4.6</h1>
+            <div class="estrellas">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <div>
+          <p>759 Ratings</p>
+          <p>Google Reviews</p>
+        </div>
       </div>
       <div class="cliente">
-        <h1>Nuestros Clientes</h1>
-        <span>Marcos Perez</span>
+        <h1>Marcos Perez</h1>
+        <span>Cliente</span>
         <p>
           No puedo dejar de expresar mi gratitud y satisfacción con la
           experiencia que tuve al comprar en <strong>DecorArte</strong>.
@@ -55,10 +59,11 @@
     </div>
     </div>
   </section>
+  {{ block.super }}
   <section id="servicios">
     <div class="contenedor">
       <div class="cabecera">
-        <h1>Nuestros productos</h1>
+        <h1>Transformando Espacios</h1>
         <a href="productos" class="btn escalar">Ver Más</a>
       </div>
       <div class="contenedorGrid">
@@ -114,7 +119,7 @@
       </div>
       <div class="particion">
         <hr>
-        <p>Beneficios y Caracteristicas</p>
+        <h2>Beneficios y Caracteristicas</h2>
         <hr>
       </div>
       <div class="contenedorGrid">
@@ -172,7 +177,7 @@
               class="fotoPerfil"
             />
           </div>
-          <h3>Alicia Rodriguez, Buenos Aires</h3>
+          <h5>Alicia Rodriguez, Buenos Aires</h5>
           <div class="estrellas">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -193,7 +198,7 @@
               class="fotoPerfil"
             />
           </div>
-          <h3>Gustavo Gonzalez, Belgrano</h3>
+          <h5>Gustavo Gonzalez, Belgrano</h5>
           <div class="estrellas">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -214,7 +219,7 @@
               class="fotoPerfil"
             />
           </div>
-          <h3>Andrés Morales, Villa Devoto</h3>
+          <h5>Andrés Morales, Villa Devoto</h5>
           <div class="estrellas">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -235,7 +240,7 @@
               class="fotoPerfil"
             />
           </div>
-          <h3>Alicia Rodriguez, Buenos Aires</h3>
+          <h5>Alicia Rodriguez, Buenos Aires</h5>
           <div class="estrellas">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
