@@ -28,6 +28,9 @@
     html{
         font-size: 70%;
     }   
+    .contenedor{
+        flex-direction: column;
+    }
     .contenedorGrid:not(.contacto ul){
         grid-template-columns: 70%;
         justify-content: center;
@@ -40,7 +43,6 @@
         display: initial;
     }
     nav ul {
-        display: none;
         position: absolute;
         top: 100%;
         right: 0;
@@ -49,6 +51,9 @@
         line-height: 1.5;
         width: 100%;
         text-align: center;
+        transform: translateY(-25%);
+        opacity: 0;
+        transition: all .5s ease-in-out;
     }
     header nav ul li{
         font-size: 2rem;
@@ -106,6 +111,9 @@
     }
     .redes-sociales a{
         text-align: center;
+    }
+    .contenedorDashboard{
+        width: 100%;
     }
     
 }

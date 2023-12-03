@@ -5,14 +5,16 @@
 
 <body>
     {% include "base/header.html" %}
-   
+    <div class="pantallaOscura">
+    </div>
     {% block content %}
-    {% include "base/carruselProducto.html" %}
+    
     {% endblock %}
     
     {% include "base/footer.html" %}
     
     <script>
+      {% comment %}ANIMATION EXPERIENCIA {% endcomment %}
       const exp = document.querySelectorAll('.experiencia')
 
       function animacionExperiencia() {
@@ -30,17 +32,22 @@
       window.addEventListener('scroll',animacionExperiencia)
       window.addEventListener('load',animacionExperiencia)
       
+      {% comment %} ANIMATION MENU DESPLEGABLE {% endcomment %}
       const menu = document.querySelector('.containerMenu')
       const lineMenu1 = document.querySelector('.lineMenu1')
       const lineMenu2 = document.querySelector('.lineMenu2')
       const lineMenu3 = document.querySelector('.lineMenu3')
       const navbar = document.querySelector('nav ul')
+      const pantallaOscura = document.querySelector('.pantallaOscura')
+      const thead = document.querySelector('thead')
       
       menu.addEventListener('click',()=>{
           lineMenu1.classList.toggle('active')
           lineMenu2.classList.toggle('active')
           lineMenu3.classList.toggle('active')
           navbar.classList.toggle('active')
+          pantallaOscura.classList.toggle('activar')
+          thead.classList.toggle('activar')
       })
       if(window.innerWidth > 767){
         if (navbar.classList.contains('active')){
@@ -48,6 +55,19 @@
         }
       }
       
+      {% comment %} CAMBIAR EL VALOR DEL PRECIOTOTAL EN COMPRA DE PRODUCTO {% endcomment %}
+
+      function calcularTotal(){
+        const precioTotal = document.querySelector('.precioTotal')
+        const cantidad = document.querySelector('#cantidad').value
+        const precio = document.querySelector('#precio').value
+
+        total = precio * cantidad
+
+        precioTotal.innerHTML = `Total: ${total}`
+      }
+
+      window.addEventListener('load',calcularTotal)
     </script>
 </body>
 </html>

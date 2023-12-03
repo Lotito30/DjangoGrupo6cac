@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
+from datetime import datetime
 
-from .models import Producto,Cliente
-from .forms import ProductoForm,ClienteForm
+from .models import Producto, Cliente, Venta
+from .forms import ProductoForm,ClienteForm,VentaForm
 
 modelProductos = Producto.objects.all()
 
@@ -19,13 +20,22 @@ title = {
 class ProductoListView(ListView): #Esta clase sirve para listar los productos con la libreria ListView
     model = Producto
     context_object_name = 'productos'
+class VentasListView(ListView): #Esta clase sirve para listar las ventas con la libreria ListView
+    model = Venta
+    context_object_name = 'ventas'
     
 #Esta clase sirve para crear el formulario para crear los productos con la libreria CreateView y hereda de ProductoListView para tener el contexto y pasarlo para que renderice los productos y tener las opciones de editar y eliminar
-class CrearProductoView(CreateView,ProductoListView): 
+class abmView(CreateView,ProductoListView,VentasListView): 
     model = Producto
     form_class = ProductoForm
-    success_url = '/agregarproducto'
+    success_url = '/abm'
 
+    def get_context_data(self, **kwargs):
+        context = super(abmView, self).get_context_data(**kwargs)
+        context['productos'] = Producto.objects.all()
+        context['ventas'] = Venta.objects.all()
+        return context
+    
 #Esta clase sirve para crear el formulario para contacto con la libreria CreateView y hereda de ProductoListView para tener el contexto y pasarlo para que renderice los productos y tener las opciones de editar y eliminar
 class CrearClienteView(CreateView,ProductoListView):
     model = Cliente
@@ -47,10 +57,9 @@ def editar(request,id):
     form = ProductoForm(request.POST or None, instance=producto)
     
     if request.method == 'POST':
-        
         if form.is_valid():
             form.save()
-        return redirect("/agregarproducto")
+        return redirect("/abm")
 
     return render(request,'editar.html',{'form':form, 'producto':producto, 'title':title['editar']})
 
@@ -58,16 +67,6 @@ def eliminar(request,id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
     return redirect('/agregarproducto')
-
-def comprar(request,id):
-    producto = get_object_or_404(Producto, id=id)
-    return render(request,
-                  "comprar.html",
-                    {
-                    'title':title['comprar'],
-                    'producto': producto
-                    }
-                    )
     
 def acercaDe(request):
     return render(request,
@@ -77,3 +76,33 @@ def acercaDe(request):
                     }
                 
                 )
+
+def comprar(request, id):
+    producto = get_object_or_404(Producto, pk=id)
+    if request.method == 'POST':
+        form = VentaForm(request.POST)
+        if form.is_valid():
+            venta = form.save(commit=False)
+            venta.fecha = datetime.utcnow()
+            venta.producto = producto
+            venta.cantidad = request.POST.get('cantidad')
+            venta.cliente = form.cleaned_data['cliente']
+            venta.precioTotal = producto.precio * int(request.POST.get('cantidad'))
+            venta.save()
+            
+            if producto.stock > int(request.POST.get('cantidad')):
+                producto.stock -= int(request.POST.get('cantidad'))
+            else:
+                producto.stock = 0
+
+            producto.save()
+
+            return redirect('productos')
+    else:
+        form = VentaForm()
+
+    context = {
+        'producto': producto,
+        'form': form
+    }
+    return render(request, 'abm/pagina_venta.html', context)

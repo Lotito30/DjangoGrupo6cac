@@ -83,5 +83,6 @@ nav a:hover:not(footer a){
 }
 
 nav ul.active{
-    display: initial;
+    opacity: 1;
+    transform: translateY(0);
 }

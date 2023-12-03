@@ -2,11 +2,74 @@
 {% load static %}
 
 {% block content %}
-<section>
-  <div class="contenedor">
-    <div>
-        <h1 class='text-center'>Agregar Producto</h1>
-        <form method="POST" enctype="multipart/form-data">
+<section id="productoForm">
+  <div class="contenedorABM">
+    <article class="contenedorDashboard">
+      <article class='articulo pt-5'>  
+        <div class="contenedorTable">
+          <h1>Ventas</h1>
+            <table class="cartaProductos">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>cliente</th>
+                  <th>producto</th>
+                  <th>cantidad</th>
+                  <th>fecha</th>
+                  <th>precioTotal</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for venta in ventas %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{venta.cliente}}</td>
+                  <td>{{venta.producto}}</td>
+                  <td>{{venta.cantidad}}</td>
+                  <td>{{venta.fecha}}</td>
+                  <td>{{venta.precioTotal}}</td> 
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>  
+      </article>
+      <article class='articulo pt-5'>  
+        <div class="contenedorTable">
+            <h1>Inventario</h1>
+              <table class="cartaProductos">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for producto in productos %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.descripcion}}</td>
+                    <td>{{producto.stock}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td class='botones'>
+                      <a href="/editar/{{producto.id}}"><button type="button" class="editar-btn">Editar</button></a>
+                      <a href="/eliminar/{{producto.id}}"><button type="button" class="borrar-btn">Eliminar</button></a>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+          </div>  
+      </article>
+    </article>
+    <article class="pt-5">
+      <form method="POST" enctype="multipart/form-data">
+          <h1 class='text-center'>Agregar Producto</h1>
             {% csrf_token %}
             {{ form.as_table }}
         <div class="botones">
@@ -14,36 +77,9 @@
             <button type="reset" class="borrar-btn">Borrar</button>
         </div>
         </form>
-    </div>
-    <div class='productosEditar pt-5'>  
-        <h1 class='text-center'>Productos</h1>
-        <div class="scroll">
-            <table class="cartaProductos table-bordered border-primary">
-              <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Stock</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-              </tr>
-              {% for producto in productos %}
-              <tr>
-                <td>{{loop.index0}}</td>
-                <td>{{producto.nombre}}</td>
-                <td>{{producto.descripcion}}</td>
-                <td>{{producto.stock}}</td>
-                <td>{{producto.precio}}</td>
-                <td class='botones'>
-                  <a href="/editar/{{producto.id}}"><button type="button" class="editar-btn">Editar</button></a>
-                  <a href="/eliminar/{{producto.id}}"><button type="button" class="borrar-btn">Eliminar</button></a>
-                </td>
-              </tr>
-              {% endfor %}
-            </table>
-        </div>  
-    </div>
-</div>
+    </article> 
+  </div>
 </section>
-   
+
 {% endblock  %}
+

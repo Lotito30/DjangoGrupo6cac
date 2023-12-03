@@ -10,13 +10,6 @@ class Producto(models.Model):
     stock = models.IntegerField(null=False)
     imagen = models.ImageField(upload_to='productos', null=True)
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        img = Image.open(self.imagen.path)
-        output_size = (250, 250)
-        img.thumbnail(output_size)
-        img.save(self.imagen.path)
-
     def __str__(self):
         return self.nombre
 
@@ -40,4 +33,4 @@ class Venta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id
+        return self.cliente, self.fecha, self.precioTotal
