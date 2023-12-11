@@ -2,13 +2,20 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include "base/head.html" %}
-
 <body>
     {% include "base/header.html" %}
     <div class="pantallaOscura">
     </div>
     {% block content %}
-    
+    {% if messages %}
+      <div class="messages">
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+          {% for message in messages %}
+          <h1 class='messages-h1'>{{ message }}</h1>
+          {% endfor %}
+      </div>
+    {% endif %}
+      
     {% endblock %}
     
     {% include "base/footer.html" %}
@@ -68,6 +75,14 @@
       }
 
       window.addEventListener('load',calcularTotal)
+
+      const messages= document.querySelector('.messages')
+      const messagesI= document.querySelector('.fa-window-close')
+
+      messagesI.addEventListener('click',()=>{
+        messages.classList.toggle('active')
+      }
+      )
     </script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 {% extends "base/base.html" %}
 {% block content %}
 	<section >
+		{{ block.super }}
 		<article class="contenedorContacto">
 			<article class="contenedor">
-				<form method="POST">
+				<form method="POST" id='iniciarSesion'>
 					{% csrf_token %}
 					{{ form.as_table }}
 				<div class="botones mt-3">
@@ -13,8 +14,8 @@
 				</form>
 			</article>
 			<article class="contactoTexto">
-				<h1>¿Cómo contactarnos?</h1>
-				<p>Si te interesan nuestros productos o servicios, o si quieres saber más sobre nosotros, puedes contactarnos completando el siguiente formulario. Te responderemos lo más pronto posible y te daremos toda la información que necesites. Estamos a tu disposición y te ayudaremos a crear el hogar de tus sueños.</p>
+				<h1>Registrarse</h1>
+				<p>¡Tu hogar ideal está a solo un registro de distancia!</p>
 			</article>
 		</article>
 	</section>

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from datetime import datetime
+from django.contrib import messages
 
 from .models import Producto, Cliente, Venta
 from .forms import ProductoForm,ClienteForm,VentaForm
@@ -23,25 +24,32 @@ class ProductoListView(ListView): #Esta clase sirve para listar los productos co
 class VentasListView(ListView): #Esta clase sirve para listar las ventas con la libreria ListView
     model = Venta
     context_object_name = 'ventas'
-    
+class CrearClienteView(CreateView,ProductoListView):
+    model = Cliente
+    form_class = ClienteForm
+    success_url = '/iniciarSesion'
+
+    def form_valid(self, form):
+        cliente = form.save(commit=False)
+        if Cliente.objects.filter(email=cliente.email).exists():
+            messages.info(self.request, 'Cliente reconocido, ¡Sigue explorando y disfrutando de nuestro sitio web!')
+            return redirect('/iniciarSesion')
+        else:
+            messages.success(self.request, 'Acción realizada con éxito.')
+            cliente.save()
+            return super().form_valid(form)
 #Esta clase sirve para crear el formulario para crear los productos con la libreria CreateView y hereda de ProductoListView para tener el contexto y pasarlo para que renderice los productos y tener las opciones de editar y eliminar
-class abmView(CreateView,ProductoListView,VentasListView): 
+class AbmView(CreateView,ProductoListView,VentasListView): 
     model = Producto
     form_class = ProductoForm
     success_url = '/abm'
 
     def get_context_data(self, **kwargs):
-        context = super(abmView, self).get_context_data(**kwargs)
+        context = super(AbmView, self).get_context_data(**kwargs)
         context['productos'] = Producto.objects.all()
         context['ventas'] = Venta.objects.all()
+        context['title'] = 'ABM'
         return context
-    
-#Esta clase sirve para crear el formulario para contacto con la libreria CreateView y hereda de ProductoListView para tener el contexto y pasarlo para que renderice los productos y tener las opciones de editar y eliminar
-class CrearClienteView(CreateView,ProductoListView):
-    model = Cliente
-    form_class = ClienteForm
-    success_url = '/contacto'
-
 
 def index(request):
     productos = Producto.objects.all()
@@ -66,7 +74,7 @@ def editar(request,id):
 def eliminar(request,id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
-    return redirect('/agregarproducto')
+    return redirect('/abm')
     
 def acercaDe(request):
     return render(request,
@@ -74,7 +82,6 @@ def acercaDe(request):
                     {
                         'title':title['acercade']
                     }
-                
                 )
 
 def comprar(request, id):
@@ -103,6 +110,7 @@ def comprar(request, id):
 
     context = {
         'producto': producto,
-        'form': form
+        'form': form,
+        'title':'Compra - DecorArte'
     }
     return render(request, 'abm/pagina_venta.html', context)

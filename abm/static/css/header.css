@@ -36,15 +36,6 @@ nav a:hover:not(footer a){
     border-color: #ff6a00;
 }
 
-.btn{
-    background-color: #8B4513;
-    color: #fff;
-    padding: .5rem;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: var(--fontRoboto);
-}
-
 .containerMenu{
     width: 1.5rem;
     height: 1.5rem;
